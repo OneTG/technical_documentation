@@ -1,0 +1,131 @@
+html,
+body {
+  min-width: 290px; /*This targets the html and body element, min-width will make the body and html element create scrollbar when the screen gets smaller than 290px. It is necessary for reponsive website*/
+  color: #4d4e53;
+  background-color: #ffffff;
+  font-family: 'Open Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* The #navbar selector selects and styles only the nav container only and not the nav-links or header*/
+#navbar {
+  position: fixed; /*Position fixed will make the navbar fixed to the screen even when scrolled.*/
+  min-width: 290px; /* Min-width will create a scroll bar to the navbar when the screen is less that 290px*/
+  top: 0px;
+  left: 0px;
+  width: 300px;
+  height: 100%;
+  border-right: solid;
+  border-color: rgba(0, 22, 22, 0.4);
+}
+
+header {
+  color: black;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: thin;
+}
+
+#main-doc header /*This is an id and descendant selector, it overrides the initial header selector because of precision*/
+{ 
+  text-align: left; 
+  margin: 0px;
+}
+
+
+#navbar ul {
+  height: 88%;
+  padding: 0;
+  overflow-y: auto; /* The overflow style creates a scrollbar to the nav because the nav content is longer than the width so it creates a scroll bar to navigate the rest of the nav link. Auto attribute will create scroll only when there is an overflow and vertically since it is overflow-y.*/
+  overflow-x: hidden; /* hidden attribute hides any flow content horizontally */
+}
+
+#navbar li {
+  color: #4d4e53;
+  border-top: 1px solid;
+  list-style: none;
+  position: relative;
+  width: 100%;
+}
+
+#navbar a {
+  display: block;
+  padding: 10px 30px;
+  color: #4d4e53;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#main-doc {
+  position: absolute; /*what this did was to move the main-doc class to the right of the screen positioning it right beside the navbar. (i absolutely dont know how but will try it out on other works. use what works)*/
+  margin-left: 310px;
+  padding: 20px;
+  margin-bottom: 110px;
+}
+
+section article {
+  color: #4d4e53;
+  margin: 15px;
+  font-size: 0.96em;
+}
+
+section li {
+  margin: 15px 0px 0px 20px;
+}
+
+code {
+  display: block; /*puts the code in a box instead of line box that just fits content*/
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: #f7f7f7;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 815px) {
+  /* For mobile phones: */
+  #navbar ul {
+    border: 1px solid;
+    height: 207px;
+  }
+
+  #navbar {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-height: 275px;
+    border: none;
+    z-index: 1;
+    border-bottom: 2px solid;
+  }
+
+  #main-doc {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 270px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #main-doc {
+    margin-left: -10px;
+  }
+
+  code {
+    margin-left: -20px;
+    width: 100%;
+    padding: 15px;
+    padding-left: 10px;
+    padding-right: 45px;
+    min-width: 233px;
+  }
+}
